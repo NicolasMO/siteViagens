@@ -1,11 +1,10 @@
 import {Fragment} from "react"
 import Corpo from "../components/Corpo"
-import GrupoFotos from "./grupoFotos/GrupoFotos"
+import Rodape from "../components/Rodape"
 
 export default function Home() {
   return (
     <Fragment>  
-      <GrupoFotos/>
       <Corpo />
     </Fragment>
   )

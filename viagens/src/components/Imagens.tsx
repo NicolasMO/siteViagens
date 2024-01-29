@@ -1,7 +1,7 @@
-import morroInacio from '../assets/imgs/morroPaiInacio/morroInacio.png'
+import morroInacio from '../assets/imgs/morroPaiInacio/morroInacio.jpg'
 import grutaLapa from '../assets/imgs/grutaLapa/grutaLapa.jpg'
-import cachoeiraFumaca from '../assets/imgs/cachoeiraFumaca/cachoeiraFumaca.png'
-import cachoeiraRiachinho from '../assets/imgs/cachoeiraRiachinho/riachinho.png'
+import cachoeiraFumaca from '../assets/imgs/cachoeiraFumaca/cachoeiraFumaca.jpg'
+import cachoeiraRiachinho from '../assets/imgs/cachoeiraRiachinho/riachinho.jpg'
 import cidadeLencois from '../assets/imgs/lencois/lencois.jpg'
 import cidadeCapao from '../assets/imgs/valeCapao/capao2.jpg'
 

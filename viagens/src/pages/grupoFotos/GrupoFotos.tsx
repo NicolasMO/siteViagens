@@ -11,7 +11,7 @@ interface GrupoFotosProps {
 
 export default function GrupoFotos (props: GrupoFotosProps) {
 
-    const coletanea : { fumaca, riachinho, grutaLapa, lencois, morroInacio, valeCapao } = Coletanea()
+        const coletanea : { fumaca, riachinho, grutaLapa, lencois, morroInacio, valeCapao } = Coletanea()
 
         const [currentIndex, setCurrentIndex] = useState(0)
 

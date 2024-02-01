@@ -1,10 +1,10 @@
 import { useState } from "react";
-import $ from "jquery"
 
 import Imagens from "../../components/Imagens";
 import Modal from "../../components/Modal";
 
 import Local from "../agendamento/Local";
+import usePaginasNav from "../../hooks/usePaginasNav";
 
 export default function Viagens() {
 
@@ -14,29 +14,10 @@ export default function Viagens() {
     const imagens : {imgMorroInacio, imgGrutaLapa, imgCachoeiraFumaca, 
         imgCachoeiraRiachinho, imgCidadeCapao, imgCidadeLencois } = Imagens()
 
-    function exibirNomeLocal() {
-        const foto = $('div:hover.p-2').last()
-
-        const nomeLocal = document.getElementById('nomeLocal')
-        nomeLocal.innerHTML = foto[0].getAttribute('id')
-    }
-
-    function coletaneaFotos() {
-        const foto = $('div:hover.p-2').last()
-
-        const roloFotos = foto[0].getAttribute('coletanea-fotos')
-        return roloFotos
-    }
-
-    function larguraMobile() {
-        const larguraCorpo = document.querySelector('body').clientWidth
-        if (larguraCorpo <= 635) {
-            return true
-        }
-    }
+    const { exibirNomeLocal, coletaneaFotos, larguraMobile } = usePaginasNav()
 
     return (
-        <div className="h-full">
+        <div className="h-full xl:h-screen">
             <div className={`flex flex-col items-center pt-16`}>
                     <h1 className="text-xl text-center xl:text-2xl font-bold">Esses são pontos turísticos da Chapada Diamantina</h1>
                     <h2 className="text-xl text-center xl:text-2xl font-bold text-[#1e7274]">Clique em um deles e veja mais informações</h2>
@@ -101,7 +82,7 @@ export default function Viagens() {
             </div>
 
             <Modal isOpen={openModal} modalMobile={larguraMobile()} setModalOpen={() => setOpenModal(!openModal)}>
-                <Local nomeLocal={roloFotos} mobile={larguraMobile()} />
+                <Local fotosLocal={roloFotos} mobile={larguraMobile()} />
             </Modal>
         </div>
     )

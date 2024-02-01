@@ -1,3 +1,4 @@
+import useComponents from "../hooks/useComponents";
 import Botao from "./Botao";
 
 interface CabecalhoProps {
@@ -7,27 +8,7 @@ interface CabecalhoProps {
 }
 
 export default function Cabecalho (props: CabecalhoProps) {
-    function mostrarMenu() {
-    
-    const barraMenu1 = document.querySelector("#barra1")
-    const barraMenu2 = document.querySelector("#barra2")
-    const barraMenu3 = document.querySelector("#barra3")
-    const menuToggle = document.querySelector("#menu")
-    
-    const corpo = document.querySelector('body')
-    corpo.classList.toggle('overflow-hidden')
-
-        const parametroBarra1 = ['origin-center', 'rotate-45', 'translate-y-2', 'transition', 'duration-75']
-        const parametroBarra2 = ['opacity-0', 'transition', 'duration-75']
-        const parametroBarra3 = ['origin-center', '-rotate-45', '-translate-y-2', 'transition', 'duration-75']
-        
-        parametroBarra1.map(toggleBarra => barraMenu1.classList.toggle(toggleBarra))
-        parametroBarra2.map(toggleBarra => barraMenu2.classList.toggle(toggleBarra))
-        parametroBarra3.map(toggleBarra => barraMenu3.classList.toggle(toggleBarra))
-        
-
-    menuToggle.classList.toggle('hidden')
-    }
+    const { mostrarMenu } = useComponents()
 
     return (
         <header className={`bg-[#19747E]`}>
@@ -39,9 +20,9 @@ export default function Cabecalho (props: CabecalhoProps) {
             <nav id='menu' className={`h-screen hidden flex sm:h-11 z-10 text-3xl sm:flex flex-col justify-center sm:flex-row
                                 sm:w-full sm:text-xl`}>
                             
-                <Botao className="text-white mb-6 sm:my-0 mx-14" onClick={props.clickInicio}>Início</Botao>
-                <Botao className="text-white my-6 sm:my-0 mx-14" onClick={props.clickViagens}>Locais</Botao>
-                <Botao className="text-white my-6 sm:my-0 mx-14" onClick={props.clickContatos}>Contato</Botao>
+                <Botao className="text-white mb-6 sm:my-0 mx-24" onClick={props.clickInicio}>Início</Botao>
+                <Botao className="text-white my-6 sm:my-0 mx-24" onClick={props.clickViagens}>Locais</Botao>
+                <Botao className="text-white my-6 sm:my-0 mx-24" onClick={props.clickContatos}>Contato</Botao>
                 
             </nav>
         </header>

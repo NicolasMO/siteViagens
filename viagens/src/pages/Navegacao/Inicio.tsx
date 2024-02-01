@@ -4,24 +4,15 @@ import Imagens from "../../components/Imagens";
 import InfoLocais from '../../assets/texts/InfoLocais'
 import Botao from "../../components/Botao";
 
-import $ from "jquery"
+import usePaginasNav from "../../hooks/usePaginasNav";
 
 export default function Inicio () {
     const {imgMorroInacio, imgGrutaLapa, imgCachoeiraFumaca} = Imagens()
     const infoLocais : { fumaca, grutaLapa, morroInacio } = InfoLocais()
 
-    function mostrarTexto() {
-        const divTexto = $('div:hover').last().prev()
-        divTexto[0].classList.toggle('h-20')
+    const { mostrarTexto } = usePaginasNav()
 
-        const buttonTexto = $('div:hover > button')
-        if (buttonTexto[0].innerHTML == 'Expandir') {
-            buttonTexto[0].innerHTML = 'Ocultar'
-        } else {
-            buttonTexto[0].innerHTML = 'Expandir'
-        }
-    }
-
+   
     return (
         <Fragment>
             <div className={`h-full flex flex-col items-center pt-16`}>
